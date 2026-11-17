@@ -2,15 +2,15 @@
 name: Marie
 surname: Curie
 position: "Physicist and chemist building the science of radioactivity."
-address: "Paris, France"
-address-link: "https://www.google.com/maps/place/Paris"
-email: "marie.curie@example.org"
-github: mcurie
-# Uncomment to add more to the header:
-# phone: "+33 1 23 45 67 89"
-# www: "example.org"
-# linkedin: mcurie
-# x: mcurie
+social:
+  - address: {handle: "Paris, France", url: "https://www.google.com/maps/place/Paris"}
+  - email: marie.curie@example.org
+  - github: mcurie
+  # Uncomment to add more to the header:
+  # - phone: "+33 1 23 45 67 89"
+  # - website: example.org
+  # - linkedin: mcurie
+  # - x: mcurie
 # profilepic: "profile.png"
 # initials: "MC"
 format: jarocki-html

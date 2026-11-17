@@ -157,6 +157,11 @@ body {
   color: var(--jarocki-muted);
 }
 
+.jarocki-print-contact span + span::before {
+  content: "/";
+  margin-right: 0.5rem;
+}
+
 .jarocki-print-contact a {
   color: inherit;
   text-decoration: underline;

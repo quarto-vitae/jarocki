@@ -29,9 +29,10 @@ Set the format and describe yourself in the YAML header:
 name: Marie
 surname: Curie
 position: "Physicist and chemist building the science of radioactivity."
-address: "Paris, France"
-email: "marie.curie@example.org"
-github: mcurie
+social:
+  - address: "Paris, France"
+  - email: marie.curie@example.org
+  - github: mcurie
 format: jarocki-html
 ---
 ```
@@ -152,14 +153,30 @@ Set these in the YAML header. All are optional except `name`.
 |--------|--------|
 | `name`, `surname` | The name shown in the header |
 | `position` | A tagline under the name |
-| `address` | A short location, shown with a globe icon |
-| `address-link` | Makes the location a link, e.g. to a map |
-| `email`, `phone` | Contact details, shown as icon buttons on screen and as plain text when printed |
-| `www` | Personal website, given as a bare domain (`example.org`); linked as `https://` |
-| `github`, `linkedin`, `x` | Profile usernames, turned into full profile links |
+| `social` | A list of contact details, one `service: handle` item each (see below) |
 | `profilepic` | Path to a square profile image |
 | `initials` | Shown in a placeholder avatar when `profilepic` is not set |
 | `description` | Overrides the `<meta name="description">` tag; defaults to `position` |
+
+### Contact details
+
+Contact details use the `social` list shared by every quarto-vitae template:
+
+```yaml
+social:
+  - address: {handle: "Paris, France", url: "https://www.google.com/maps/place/Paris"}
+  - email: marie.curie@example.org
+  - website: example.org
+  - github: mcurie
+  - linkedin: mcurie
+```
+
+The address is shown under the position. Every other item with a link becomes
+an icon button on screen and plain text when printed. Email, phone, website,
+GitHub, LinkedIn and X have their own icons; any other service gets a generic
+link icon. See the
+[curriculum documentation](https://github.com/quarto-vitae/curriculum) for all
+services and options.
 
 ### Typography
 
