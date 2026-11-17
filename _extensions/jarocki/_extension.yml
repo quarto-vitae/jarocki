@@ -1,0 +1,46 @@
+title: Jarocki CV
+author: Mitchell O'Hara-Wild
+version: 0.1.0
+quarto-required: ">=1.7.0"
+contributes:
+  formats:
+    html:
+      # A fully custom page -- no Bootstrap, no Quarto page furniture (TOC,
+      # anchor links, code tools). `jarocki.html` is the whole document.
+      minimal: true
+      document-css: false
+      theme: none
+      template: jarocki.html
+      css: jarocki.css
+      toc: false
+      number-sections: false
+      title-block-style: none
+      # Unlike a LaTeX template, the browser can load `_extensions/jarocki/
+      # jarocki.css` directly from where it sits, via the relative `<link>`
+      # the `css` option above resolves to -- so, unlike the other
+      # quarto-vitae templates, no format-resources copy is needed here. The
+      # entries/ directory is deliberately absent from it regardless: resources
+      # are copied after pandoc runs, so a handler listed there would resolve
+      # only on the *second* render. The filter reads _extensions/**/entries/
+      # directly.
+      # Default knitr engine printing data directly as a markdown table, so a
+      # code cell can carry entries with no knitr::kable() call.
+      df-print: kable
+      # A CV is a document of listings; echoing the code that builds them is
+      # almost never wanted.
+      echo: false
+      # Provided by the embedded copy of quarto-vitae/curriculum, under
+      # _extensions/quarto-vitae/curriculum. Filters are matched by the
+      # embedded extension's directory name (its extension id), not by the Lua
+      # filter's filename -- so this must say "curriculum", matching
+      # quarto-vitae/curriculum's own directory name, not "vitae-entries".
+      # Refresh with:
+      #   quarto update quarto-vitae/curriculum --embed jarocki
+      filters:
+        - curriculum
+      # Style names this format implements, for the filter's fallback
+      # warning. `badges` (a flat wall of pills) and `cards` (a project grid)
+      # are jarocki-specific shapes; detailed, brief and skills are the
+      # conventional three.
+      vitae:
+        styles: [detailed, brief, skills, badges, cards]

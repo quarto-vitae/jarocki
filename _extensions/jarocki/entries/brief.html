@@ -1,0 +1,12 @@
+$-- brief: one line per entry -- what (bold), where (falling back to with),
+$-- when right-aligned. Suits awards, memberships and service.
+<ul class="jarocki-brief">
+$for(entries)$
+  <li>
+    <span>
+      <span class="jarocki-brief-what">$entries.what$</span>$if(entries.where)$ &mdash; <span class="jarocki-brief-where">$entries.where$</span>$else$$if(entries.with)$ &mdash; <span class="jarocki-brief-where">$entries.with$</span>$endif$$endif$
+    </span>
+    $if(entries.when)$<span class="jarocki-brief-when">$entries.when$</span>$endif$
+  </li>
+$endfor$
+</ul>

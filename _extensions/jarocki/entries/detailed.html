@@ -1,0 +1,20 @@
+$-- detailed: a heading (with), with an optional inline row of `tags`
+$-- badges, a subheading (what), a right-aligned period (when, where), and a
+$-- bulleted elaboration (why). Suits work experience and education: `with`
+$-- is the institution or employer (the prominent heading), `what` the
+$-- degree or job title.
+$for(entries)$
+<article class="jarocki-entry">
+  <div class="jarocki-entry-head">
+    <h3 class="jarocki-entry-title">
+      <span class="jarocki-entry-with">$entries.with$</span>
+      $if(entries.tags)$<span class="jarocki-entry-tags" aria-label="Technologies used">$for(entries.tags)$<span class="jarocki-badge jarocki-badge-outline">$entries.tags$</span>$endfor$</span>$endif$
+    </h3>
+    $if(entries.when)$<div class="jarocki-entry-period">$entries.when$$if(entries.where)$ &middot; $entries.where$$endif$</div>$endif$
+  </div>
+  $if(entries.what)$<h4 class="jarocki-entry-subtitle">$entries.what$</h4>$endif$
+  $if(entries.why)$<div class="jarocki-entry-body">
+$for(entries.why)$  <p>$entries.why$</p>
+$endfor$  </div>$endif$
+</article>
+$endfor$

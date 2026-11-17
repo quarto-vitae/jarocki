@@ -1,0 +1,12 @@
+$-- skills: a category (what) paired with its members, given either as one
+$-- string in `with` or as a list of badges in `why`.
+<ul class="jarocki-skills">
+$for(entries)$
+  <li class="jarocki-skills-row">
+    <span class="jarocki-skills-category">$entries.what$</span>
+    $if(entries.with)$<span class="jarocki-badge">$entries.with$</span>$else$<ul class="jarocki-badges" aria-label="$entries.what$">
+$for(entries.why)$    <li><span class="jarocki-badge">$entries.why$</span></li>
+$endfor$    </ul>$endif$
+  </li>
+$endfor$
+</ul>

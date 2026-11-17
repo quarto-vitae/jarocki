@@ -1,0 +1,7 @@
+$-- badges: a flat, wrapped wall of pills, one per entry's `what`. For a flat
+$-- skills list with no categories -- see `skills` for category + members.
+<ul class="jarocki-badges jarocki-badges-wall" aria-label="Skills">
+$for(entries)$
+  <li><span class="jarocki-badge">$entries.what$</span></li>
+$endfor$
+</ul>

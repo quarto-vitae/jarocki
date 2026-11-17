@@ -1,0 +1,16 @@
+$-- cards: a grid of cards -- title (what, write it as a markdown link to
+$-- make it clickable), a short description (why) and tech tags (tags).
+$-- Suits side projects and similar showcase listings.
+<div class="jarocki-cards" role="feed" aria-label="$style$">
+$for(entries)$
+  <article class="jarocki-card">
+    <h3 class="jarocki-card-title">$entries.what$</h3>
+    $if(entries.why)$<div class="jarocki-card-desc">
+$for(entries.why)$    <p>$entries.why$</p>
+$endfor$    </div>$endif$
+    $if(entries.tags)$<ul class="jarocki-tags" aria-label="Technologies used">
+$for(entries.tags)$    <li><span class="jarocki-badge jarocki-badge-outline">$entries.tags$</span></li>
+$endfor$    </ul>$endif$
+  </article>
+$endfor$
+</div>

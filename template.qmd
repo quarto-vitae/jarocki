@@ -1,0 +1,108 @@
+---
+name: Marie
+surname: Curie
+position: "Physicist and chemist building the science of radioactivity."
+address: "Paris, France"
+address-link: "https://www.google.com/maps/place/Paris"
+email: "marie.curie@example.org"
+github: mcurie
+# Uncomment to add more to the header:
+# phone: "+33 1 23 45 67 89"
+# www: "example.org"
+# linkedin: mcurie
+# x: mcurie
+# profilepic: "profile.png"
+# initials: "MC"
+format: jarocki-html
+---
+
+# About
+
+Markdown inside cells is preserved and HTML is escaped for you, so
+*emphasis*, `code`, and a literal `<tag>` all come out right. Ordinary
+paragraphs, like this one, need no `.entries` div at all.
+
+# Employment
+
+Each row of the table is one entry, and each column is a field on it. The
+`detailed` style puts `with` (the employer) in the heading, with an optional
+row of `tags` badges alongside it, and `what` (the job title) underneath. A
+grid table cell can hold a bullet list, so `tags` and `why` each carry
+several items per entry — one badge per `tags` bullet, one point per `why`
+bullet.
+
+::: {.entries style="detailed"}
++------------+------------------------------------+-----------+------------------------+------------------------------------------------+
+| what       | with                               | when      | tags                   | why                                            |
++============+====================================+===========+========================+================================================+
+| Professor  | University of Paris                | 1906-1934 | - Radiochemistry       | - First woman to hold the chair                |
+|            |                                    |           | - Teaching             |   of General Physics                           |
+|            |                                    |           |                        | - Directed the Curie Laboratory                |
++------------+------------------------------------+-----------+------------------------+------------------------------------------------+
+| Researcher | [EPCI](https://www.espci.psl.eu/)  | 1897-1906 | - Radiometry           | - Isolated polonium and radium                 |
++------------+------------------------------------+-----------+------------------------+------------------------------------------------+
+:::
+
+# Education
+
+Where your data uses different headings, rename them with `fields`, written
+`new: old` in the manner of `dplyr::rename()`.
+
+::: {.entries style="detailed" fields="{what: Degree, with: Institution, when: Years}"}
+| Degree             | Institution          | Years     |
+|--------------------|-----------------------|-----------|
+| Ph.D. in Physics   | University of Paris  | 1891-1895 |
+| M.Sc. in Chemistry | University of Paris  | 1889-1891 |
+:::
+
+# Awards
+
+The `brief` style is a single line per entry, for a list that needs no
+elaboration.
+
+::: {.entries style="brief"}
+| what                     | where            | when |
+|--------------------------|-------------------|------|
+| Nobel Prize in Chemistry | Swedish Academy   | 1911 |
+| Davy Medal               | Royal Society     | 1903 |
+| Nobel Prize in Physics   | Swedish Academy   | 1903 |
+:::
+
+# Skills
+
+The `skills` style pairs a category with its members, written either as one
+string in `with` or as a list in `why`. For a flat wall of pills with no
+categories, use `badges` instead.
+
+::: {.entries style="skills" collapse="why"}
+| what        | why                                  |
+|-------------|----------------------------------------|
+| Techniques  | Fractional crystallisation             |
+| Techniques  | Piezoelectric quartz electrometry      |
+| Techniques  | Radiometric measurement                |
+:::
+
+::: {.entries style="skills"}
+| what      | with                     |
+|-----------|--------------------------|
+| Languages | Polish, French, Russian |
+:::
+
+# Side projects
+
+The `cards` style lays entries out in a responsive grid, for a showcase
+listing rather than a chronological one. Write `what` as a markdown link to
+make the card title clickable, and `tags` as a bullet list for a row of
+separate badges.
+
+::: {.entries style="cards"}
++--------------------------------------------------+----------------------+------------------------------------------+
+| what                                             | tags                 | why                                      |
++==================================================+======================+==========================================+
+| [Radioactivity Discovery](https://example.org)   | - Physics            | Announced the discovery of a new         |
+|                                                  | - Publication        | radioactive element in pitchblende.      |
++--------------------------------------------------+----------------------+------------------------------------------+
+| Mobile X-ray units                               | - Engineering        | Designed and drove mobile radiography    |
+|                                                  | - Wartime medicine   | units to treat wounded soldiers.         |
++--------------------------------------------------+----------------------+------------------------------------------+
+:::
